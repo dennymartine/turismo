@@ -1,0 +1,6 @@
+<ion-text color="danger" *ngIf="sitios.length === 0">
+  <h4>No hay registros de sitios</h4>
+</ion-text>
+<ion-list *ngIf="sitios.length > 0" >
+  <app-item-playa *ngFor="let sitio of sitios" [sitio]="sitio"></app-item-playa>
+</ion-list>

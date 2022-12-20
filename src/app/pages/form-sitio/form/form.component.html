@@ -1,0 +1,59 @@
+<div [formGroup]="sitioForm">
+  <div class="input-group">
+    <ion-item>
+      <ion-label><ion-icon name="person-sharp"></ion-icon></ion-label>
+      <ion-input placeholder="nombre" type="text" formControlName="nombre"></ion-input>
+    </ion-item>
+    <div *ngIf="sitioForm.controls['nombre'].errors">
+      <ion-text color="danger" *ngIf="sitioForm.controls['nombre'].errors['required']">
+        <small>*</small>
+      </ion-text>
+    </div>
+    <ion-item>
+      <ion-label><ion-icon name="person-sharp"></ion-icon></ion-label>
+      <ion-select formControlName="tipo" placeholder="Seleccione">
+        <ion-select-option value="playa">Playa</ion-select-option>
+        <ion-select-option value="parque">Parque</ion-select-option>
+        <ion-select-option value="rio">Rio</ion-select-option>
+      </ion-select>   
+    </ion-item>
+    <div *ngIf="sitioForm.controls['tipo'].errors">
+      <ion-text color="danger" *ngIf="sitioForm.controls['tipo'].errors['required']">
+        <small>*</small>
+      </ion-text>
+    </div>
+    <ion-item>
+      <ion-label><ion-icon name="id-card-sharp"></ion-icon></ion-label>
+      <ion-input placeholder="Buenaventura" type="text" formControlName="ciudad"></ion-input>
+    </ion-item>
+    <div *ngIf="sitioForm.controls['ciudad'].errors">
+      <ion-text color="danger" *ngIf="sitioForm.controls['ciudad'].errors['required']">
+        <small>*</small>
+      </ion-text>
+    </div>
+    <ion-item>
+      <ion-label><ion-icon name="phone-portrait-sharp"></ion-icon></ion-label>
+      <ion-input placeholder="Colombia" type="text" formControlName="pais"></ion-input>
+    </ion-item>
+    <div *ngIf="sitioForm.controls['pais'].errors">
+      <ion-text color="danger" *ngIf="sitioForm.controls['pais'].errors['required']">
+        <small>*</small>
+      </ion-text>
+    </div>
+    <ion-item>
+      <ion-label><ion-icon name="mail-sharp"></ion-icon></ion-label>
+      <ion-input placeholder="Cra #5-87, Norte Cl 3, Independencia" type="text" formControlName="direccion"></ion-input>
+    </ion-item>
+    <div *ngIf="sitioForm.controls['direccion'].errors">
+      <ion-text color="danger" *ngIf="sitioForm.controls['direccion'].errors['required']">
+        <small>*</small>
+      </ion-text>
+    </div>
+  </div>
+  <section>
+    <ion-button *ngIf="idSitio == null; else elseBlock" expand="block" (click)="createSitio()" [disabled]="sitioForm.invalid">Guardar</ion-button>
+    <ng-template #elseBlock>
+      <ion-button expand="block" color="warning" (click)="update()" [disabled]="sitioForm.invalid">Editar</ion-button>
+    </ng-template>
+  </section>
+</div>

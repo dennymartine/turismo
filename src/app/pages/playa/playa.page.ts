@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Sitio } from '../../models/sitio';
+import { SitioService } from '../../services/sitio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-playa',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayaPage implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onCreatePlaya(){
+    this.router.navigate(['/form-sitio']);
   }
 
 }

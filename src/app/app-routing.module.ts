@@ -31,6 +31,14 @@ const routes: Routes = [
     path: 'about-us',
     loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
   },
+  {
+    path: 'form-sitio',
+    loadChildren: () => import('./pages/form-sitio/form-sitio.module').then( m => m.FormSitioPageModule)
+  },
+  {
+    path: 'form-sitio/:id',
+    loadChildren: () => import('./pages/form-sitio/form-sitio.module').then( m => m.FormSitioPageModule)
+  },
 ];
 
 @NgModule({

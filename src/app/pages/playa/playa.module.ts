@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { PlayaPageRoutingModule } from './playa-routing.module';
 
 import { PlayaPage } from './playa.page';
+import { ListPlayaComponent } from './list-playa/list-playa.component';
+import { ItemPlayaComponent } from './item-playa/item-playa.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { PlayaPage } from './playa.page';
     IonicModule,
     PlayaPageRoutingModule
   ],
-  declarations: [PlayaPage]
+  declarations: [PlayaPage, ListPlayaComponent, ItemPlayaComponent]
 })
 export class PlayaPageModule {}

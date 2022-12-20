@@ -1,0 +1,14 @@
+<ion-item>
+  <ion-thumbnail slot="start">
+    <img alt="Silhouette of mountains" src="https://picsum.photos/200/300/?ramdon={{sitio.foto}}" />
+  </ion-thumbnail>
+  <ion-label>
+    {{ sitio.nombre }}
+  </ion-label>
+  <ion-button (click)="clickEventEdit(sitio.id)"  color="warning" slot="end">
+    <ion-icon slot="icon-only" name="pencil"></ion-icon>
+  </ion-button>
+  <ion-button (click)="clickEventDelete(sitio.id)"  color="danger" slot="end">
+    <ion-icon slot="icon-only" name="trash"></ion-icon>
+  </ion-button>
+</ion-item>
